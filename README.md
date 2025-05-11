@@ -1,1 +1,13 @@
 # Predicting-F1-results
+
+This project aims to predict the performance of Formula 1 drivers using a custom-built Decision Tree classifier. Leveraging race data from 2014 to 2023 as the training set and testing on the 2024 season, the model classifies race outcomes into four performance tiers: First, Top 5, Top 10, and Outside Top 10. Our goal is to explore how a driver’s grid position, constructor nationality, and average finishing position over the last five races can be used to predict their final result in an upcoming race. We also simulate a real-world prediction for the 2025 Saudi Arabia Grand Prix based on qualifying conditions.
+
+The core of the project is written in Python. The decision tree is implemented from scratch without the use of external machine learning libraries, emphasizing our understanding of entropy, information gain, and tree recursion. We process race data using pandas and visualize results with scikit-learn’s built-in evaluation tools, such as confusion matrices and classification reports.
+
+The dataset includes two main sources: results.csv, which provides driver outcomes and race metadata, and constructors.csv, which provides team nationalities. From these, we extract relevant features and engineer a dataset where each row represents a race instance for a driver. The features include grid (starting position bucket), avg_finish (driver’s average finish in last five races), and nationality (constructor’s country). The target label is the performance tier based on the driver's final position.
+
+The project is organized into multiple components. The script.py file handles data loading, training, testing, evaluation, and the Saudi GP simulation. Jupyter notebooks (analysis.ipynb, test.ipynb) are included for additional experimentation and result inspection. Supporting documents like the Proposal.pdf, AI_Paper_Draft.pdf, and the final CSCI-B 351 Project.pptx presentation illustrate the project's planning, technical details, and conclusions.
+
+Overall, this project offers a hands-on exploration of supervised machine learning, data engineering, and sports analytics. While the accuracy of our model (~68% on the 2024 season) demonstrates solid performance, especially in predicting drivers who finish outside the top 10, the results also highlight areas for improvement in handling top-tier classification. Future enhancements could include adding more advanced features such as weather, pit strategies, or team dynamics, and extending the model to incorporate ensemble methods like random forests.
+
+Team Members: Benjamin Jacobs, Adit Patel, Jacob Johnson
